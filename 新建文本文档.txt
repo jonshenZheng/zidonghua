@@ -65,7 +65,7 @@
 			是处理css文件中的url()等
 
 		style-loader 
-			将css插入到页面的style标签
+			转换后的css文件以 style 标签形式插入 html 中
 
 		less-loader 
 			是将less文件编译成css
@@ -75,6 +75,18 @@
 
 		postcss-loader
 			补全浏览器前缀,可以配合	autoprefixer插件一起使用
+
+		babel-loader
+			将ES6及其以上版本 编译成 ES5	
+
+		url-loader
+			用于将图片小于一定大小的文件，转为 base64 字符串
+
+		file-loader
+			不能转换 base64字符串 的文件，被这个处理（主要用于设置打包后图片路径，以及CDN等）
+
+		html-withimg-loader
+			用于加载html模板；	
 		
 
 
@@ -83,7 +95,7 @@
 			js一套工具库
 
 		html-webpack-plugin
-			自动帮你生成一个 html 文件，并且引用相关的 assets 文件(如 css, js)
+			用于将已有 html 文件作为模板，自动帮你生成一个 html 文件，并且引用相关的 assets 文件(如 css, js)
 
 		extract-text-webpack-plugin	
 			该插件的主要是为了抽离css样式,防止将样式打包在js中引起页面样式加载错乱的现象
@@ -96,3 +108,12 @@
 
 		autoprefixer
 			补全浏览器前缀
+
+		clean-webpack-plugin
+			用于每次打包前清理dist文件夹
+
+		CommonsChunkPlugin
+			提取 chunks 之间共享的通用模块
+
+
+.categroy-right .sel-tab0  .tab-lb.show0 icon,.categroy-right .sel-tab1  .tab-lb.show1 icon,.categroy-right .sel-tab2  .tab-lb.show2 icon,.categroy-right .sel-tab3  .tab-lb.show3 icon,.categroy-right .sel-tab4  .tab-lb.show4 icon,.categroy-right .sel-tab5  .tab-lb.show5 icon,.categroy-right .sel-tab6  .tab-lb.show6 icon,.categroy-right .sel-tab7  .tab-lb.show7 icon,.categroy-right .sel-tab8  .tab-lb.show8 icon,.categroy-right .sel-tab9  .tab-lb.show9 icon,.categroy-right .sel-tab10  .tab-lb.show10 icon,.categroy-right .sel-tab11  .tab-lb.show11 icon,.categroy-right .sel-tab12  .tab-lb.show12 icon,.categroy-right .sel-tab13  .tab-lb.show13 icon
