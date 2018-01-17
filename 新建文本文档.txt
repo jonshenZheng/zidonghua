@@ -19,3 +19,5 @@
 	https://segmentfault.com/a/1190000005742122
 	https://www.cnblogs.com/moqiutao/p/7281751.html
 	http://blog.sina.com.cn/s/blog_7905d8bf0102wwbr.html
+
+文档链接：http://www.css88.com/doc/webpack2/guides/installation/
