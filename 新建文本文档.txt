@@ -1,0 +1,21 @@
+开发
+	1.热更新
+	2.各种loader转化（es6、less、typescript）
+	
+
+
+发布及预览
+	1 语法检查（js、css、html）
+	2 代码压缩
+	3 debuger、console删除、去除注释
+
+插件
+	1.自动补全css3前缀（autoprefixer）
+	2.自动生成html插件（html-webpack-plugin）
+	3.用于在building之前删除你以前build过的文件（clean-webpack-plugin）
+	4.将图片文件转换为base64编码并载入浏览器能够减少http请求数，但是增大了js或html文件的体积（url-loader）
+
+插件使用链接
+	https://segmentfault.com/a/1190000005742122
+	https://www.cnblogs.com/moqiutao/p/7281751.html
+	http://blog.sina.com.cn/s/blog_7905d8bf0102wwbr.html
