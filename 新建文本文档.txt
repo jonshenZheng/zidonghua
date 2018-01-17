@@ -20,4 +20,79 @@
 	https://www.cnblogs.com/moqiutao/p/7281751.html
 	http://blog.sina.com.cn/s/blog_7905d8bf0102wwbr.html
 
-文档链接：http://www.css88.com/doc/webpack2/guides/installation/
+文档链接：
+	http://www.css88.com/doc/webpack2/guides/installation/					   V2 版本				
+	http://www.css88.com/doc/webpack/                                          V3 版本
+
+
+出问题
+	CMD 报 'webpack' 不是内部或外部命令，也不是可运行的程序
+	解决：装个全局webpack
+
+	postcss-loader 使用报错
+	解决 写出这样就行
+		loader: "postcss-loader",
+        options: {           // 如果没有options这个选项将会报错 No PostCSS Config found
+            plugins: (loader) => [
+                require('autoprefixer')(), //CSS浏览器兼容
+            ]
+        }
+
+
+
+
+为什么要用webpack
+	载入有问题的依赖项
+	意外引入一些你不需要在生产中用上的 CSS 样式表和 JS 库，使项目膨胀
+	意外的两次载入（或三次）库
+	遇到作用域的问题 —— CSS 和 JavaScript 都会有
+	寻找一个让你在 JavaScript 中使用 Node/Bower 模块的构建系统，要么就得依靠一个令人发狂的后端配置才能正确地使用这些模块
+	需要优化资产asset交付，但你担心会弄坏一些东西
+
+	loader 预处理less、es6的文件
+	自动刷新浏览器提高开发效率
+
+
+
+常用的loader和plug
+
+	tips :
+		loader的加载顺序是从右往左，从下往上
+
+
+	loader：
+		css-loader 
+			是处理css文件中的url()等
+
+		style-loader 
+			将css插入到页面的style标签
+
+		less-loader 
+			是将less文件编译成css
+
+		sass-loader 
+			是将sass文件编译成css
+
+		postcss-loader
+			补全浏览器前缀,可以配合	autoprefixer插件一起使用
+		
+
+
+	plug：
+		loadsh 
+			js一套工具库
+
+		html-webpack-plugin
+			自动帮你生成一个 html 文件，并且引用相关的 assets 文件(如 css, js)
+
+		extract-text-webpack-plugin	
+			该插件的主要是为了抽离css样式,防止将样式打包在js中引起页面样式加载错乱的现象
+
+		BannerPlugin
+			在文件的头部生成注释（一般用来版权声明）
+
+		UglifyJsPlugin
+			压缩js	
+
+		autoprefixer
+			补全浏览器前缀
