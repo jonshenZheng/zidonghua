@@ -28,7 +28,8 @@ module.exports = {
                 use: [{
                     loader: "css-loader",
                     options: {
-                        modules: true
+                        modules: true,
+                        minimize: true
                     }
                 }, {
                     loader: "postcss-loader",
@@ -48,7 +49,11 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),                   //热加载插件
         new ExtractTextPlugin("build.css"),                         //从build.js分离css
-        new webpack.optimize.UglifyJsPlugin(),                      //压缩js
+        new webpack.optimize.UglifyJsPlugin({
+        	warnings: false,
+		    drop_debugger: true,									//去掉debugger		
+		    drop_console: true                                      //去掉console
+        }),                      //压缩js
         new CleanWebpackPlugin('build/*.*', {                       //压缩js
             root: __dirname,
             verbose: true,
